@@ -3,7 +3,7 @@
 //allow the config
 define('__CONFIG__',true);
 //require the config
-include_once "inc/config.php";
+require_once "inc/config.php";
 ?>
 <html lang="en">
 <head>
