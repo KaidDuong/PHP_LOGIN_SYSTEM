@@ -20,6 +20,8 @@ define('ALLOW FOOTER',true);
 //include the DB.php file
 include_once "../database/classes/DB.php";
 include_once"../database/classes/Filter.php";
+include_once"../database/classes/User.php";
+include_once"../database/classes/Page.php";
 
 $con= DB::getConnection();
 ?>

@@ -16,11 +16,9 @@ if($_SERVER['REQUEST_METHOD']=='POST'  )
     $email=Filter::String( $_POST['email']);
 
     // make sure the user does not exist
-    $findUser= $con->prepare("SELECT user_id from users where email= LOWER(:email) LIMIT 1");
-    $findUser->bindParam(':email',$email,PDO::PARAM_STR);
-    $findUser->execute();
+    $User_found= User::Find($email);
 
-    if($findUser->rowCount()==1)
+    if($User_found)
     {
     //user exists
     //we can also check to see if they are able to log in
@@ -41,7 +39,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'  )
 
     $_SESSION['user_id']=(int)$user_id;
 
-    $return['redirect']='../dashboard.php?Message=Welcome';
+    $return['redirect']='../source/dashboard.php?Message=Welcome';
     $return['is_logged_in']=true;
      }
 
