@@ -1,4 +1,3 @@
-
 <?php
 class Page {
 //Force the user to be logged in or redirect
